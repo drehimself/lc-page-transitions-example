@@ -14,3 +14,12 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.navigation {
+  display: flex;
+  gap: 16px;
+  background: darkblue;
+  color: white;
+  padding: 12px 20px;
+  margin-bottom: 12px;
+}

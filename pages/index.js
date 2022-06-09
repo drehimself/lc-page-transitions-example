@@ -1,6 +1,7 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import Head from 'next/head';
+import Image from 'next/image';
+import Link from 'next/link';
+import styles from '../styles/Home.module.css';
 
 export default function Home() {
   return (
@@ -12,6 +13,17 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
+        <Link href={'/products/1'}>
+          <a>
+            <Image
+              src="/ipad_thumb.jpg"
+              alt="ipad thumbnail"
+              width={200}
+              height={200}
+              className="shared-element"
+            />
+          </a>
+        </Link>
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
@@ -65,5 +77,5 @@ export default function Home() {
         </a>
       </footer>
     </div>
-  )
+  );
 }
