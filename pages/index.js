@@ -4,6 +4,18 @@ import Link from 'next/link';
 import styles from '../styles/Home.module.css';
 
 export default function Home() {
+  function handleClick(e) {
+    if (!document.createDocumentTransition) {
+      return;
+    }
+
+    const transition = document.createDocumentTransition();
+
+    // console.log(e.target);
+    e.target.style.pageTransitionTag = 'transition-image';
+    transition.start();
+  }
+
   return (
     <div className={styles.container}>
       <Head>
@@ -14,7 +26,7 @@ export default function Home() {
 
       <main className={styles.main}>
         <Link href={'/products/1'}>
-          <a>
+          <a onClick={handleClick}>
             <Image
               src="/ipad_thumb.jpg"
               alt="ipad thumbnail"

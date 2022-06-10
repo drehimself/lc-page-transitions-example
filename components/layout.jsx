@@ -1,17 +1,26 @@
 import Link from 'next/link';
 
 export default function Layout({ children }) {
+  function handlePageTransition() {
+    if (!document.createDocumentTransition) {
+      return;
+    }
+
+    const transition = document.createDocumentTransition();
+    transition.start();
+  }
+
   return (
     <>
       <nav className="navigation">
         <Link href="/">
-          <a>Home</a>
+          <a onClick={handlePageTransition}>Home</a>
         </Link>
         <Link href="/about">
-          <a>About</a>
+          <a onClick={handlePageTransition}>About</a>
         </Link>
         <Link href="/contact">
-          <a>Contact</a>
+          <a onClick={handlePageTransition}>Contact</a>
         </Link>
       </nav>
       <main>{children}</main>
